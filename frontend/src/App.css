@@ -1,0 +1,15 @@
+.App {
+    text-align: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    padding: 20px;
+  }
+  
+  .ant-upload-hint {
+    color: rgba(0, 0, 0, 0.45);
+  }
+  
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
