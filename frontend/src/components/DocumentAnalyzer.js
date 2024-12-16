@@ -5,6 +5,8 @@ import axios from 'axios';
 
 const { Dragger } = Upload;
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const DocumentAnalyzer = () => {
   const [loading, setLoading] = useState(false);
   const [analyzing, setAnalyzing] = useState(false);
@@ -18,7 +20,7 @@ const DocumentAnalyzer = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/api/upload', formData, {
+      const response = await axios.post(`${API_URL}/api/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 
@@ -46,7 +48,7 @@ const DocumentAnalyzer = () => {
 
     setAnalyzing(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/analyze', {
+      const response = await axios.post(`${API_URL}/api/analyze`, {
         text: extractedText
       });
 
